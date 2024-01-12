@@ -18,6 +18,13 @@ const io = new Server(server, {
 io.on("connection", (socket) => {
   console.log(`user connection initiated: ${socket.id}`);
 
+  socket.on("join_room", (data, name) => {
+    socket.join(data);
+    console.log(
+      `User with Name: ${name}, ID: ${socket.id}, joined Room ${data}`,
+    );
+  });
+
   socket.on("disconnect", () => {
     console.log(`user initiation failed: ${socket.id}`);
   });
