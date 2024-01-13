@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Socket } from "socket.io-client";
+import Card from "@mui/material/Card";
 
 interface chatProps {
   socket: Socket;
