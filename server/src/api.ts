@@ -25,6 +25,11 @@ io.on("connection", (socket) => {
     );
   });
 
+  socket.on("send_message", (messageData) => {
+    console.log(messageData);
+    socket.to(messageData.roomId).emit("receive_message", messageData);
+  });
+
   socket.on("disconnect", () => {
     console.log(`user initiation failed: ${socket.id}`);
   });
