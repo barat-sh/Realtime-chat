@@ -4,9 +4,13 @@ import { Landing } from "./components/Landing.tsx";
 
 function App() {
   return (
-    <>
+    <div
+      style={{
+        display: "flex",
+      }}
+    >
       <Landing />
-    </>
+    </div>
   );
 }
 
